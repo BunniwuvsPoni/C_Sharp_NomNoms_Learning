@@ -1,10 +1,12 @@
-﻿using System;
+﻿using NomNoms.Core;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace NomNoms.Data
 {
-    interface IRestaurantData
+     public interface IRestaurantData
     {
+        IEnumerable<Restaurant>
     }
 }
