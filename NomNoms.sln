@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomNoms", "NomNoms\NomNoms.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomNoms.Core", "NomNoms.Core\NomNoms.Core.csproj", "{75548946-92C1-40C0-BD33-BFB5A422744B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NomNoms.Data", "NomNoms.Data\NomNoms.Data.csproj", "{19B7C78E-5AA0-431B-8153-95E9049BB97E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{75548946-92C1-40C0-BD33-BFB5A422744B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75548946-92C1-40C0-BD33-BFB5A422744B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75548946-92C1-40C0-BD33-BFB5A422744B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B7C78E-5AA0-431B-8153-95E9049BB97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B7C78E-5AA0-431B-8153-95E9049BB97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B7C78E-5AA0-431B-8153-95E9049BB97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B7C78E-5AA0-431B-8153-95E9049BB97E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
