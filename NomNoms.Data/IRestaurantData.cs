@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace NomNoms.Data
 {
@@ -18,8 +19,8 @@ namespace NomNoms.Data
         {
             restaurants = new List<Restaurant>()
             { 
-                new Restaurant { Id = 1, Name = "Bunni's nommy noms", Location = "Clubhouse", Cuisine = CuisineType.Mexican}
-                new Restaurant { Id = 2, Name = "Poni's nomlicious oms", Location = "Cloudy loudy", Cuisine = CuisineType.None}
+                new Restaurant { Id = 1, Name = "Bunni's nommy noms", Location = "Clubhouse", Cuisine = CuisineType.Mexican},
+                new Restaurant { Id = 2, Name = "Poni's nomlicious oms", Location = "Cloudy loudy", Cuisine = CuisineType.None},
                 new Restaurant { Id = 3, Name = "Bun's buns", Location = "Secret bush", Cuisine = CuisineType.Chinese}
             };
         }
