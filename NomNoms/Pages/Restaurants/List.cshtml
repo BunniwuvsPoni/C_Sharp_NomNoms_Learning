@@ -26,6 +26,14 @@
             <td>@restaurant.Name</td>
             <td>@restaurant.Location</td>
             <td>@restaurant.Cuisine</td>
+            <td>
+                <a class="btn btn-lg"
+                   asp-page="./Detail"
+                   asp-route-restaurantID="@restaurant.Id"
+                   >
+                    <i class="fas fa-info-circle"></i>
+                </a>
+            </td>
         </tr>
      }
 </table>
