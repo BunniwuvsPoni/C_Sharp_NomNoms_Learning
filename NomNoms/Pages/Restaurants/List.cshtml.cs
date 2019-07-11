@@ -18,6 +18,10 @@ namespace NomNoms.Pages.Restaurants
         public string Message { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
 
+        //  Model binding to page
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public ListModel(IConfiguration config,
                          IRestaurantData restaurantData)
         {
@@ -25,7 +29,7 @@ namespace NomNoms.Pages.Restaurants
             this.restaurantData = restaurantData;
         }
 
-        public void OnGet(string searchTerm)
+        public void OnGet(string searchTerm)    //  Model binding happens here from the form
         {
             Message = config["Message"];
             Restaurants = restaurantData.GetRestaurantsByName(searchTerm);
