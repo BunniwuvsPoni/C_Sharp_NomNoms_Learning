@@ -5,16 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NomNoms.Core;
+using NomNoms.Data;
 
 namespace NomNoms.Pages.Restaurants
 {
     public class DetailModel : PageModel
     {
+        private readonly IRestaurantData restaurantData;
+
         public Restaurant Restaurant { get; set; }
-        public void OnGet(int restaurantId)
+
+        public DetailModel(IRestaurantData restaurantData)
         {
-            Restaurant = new Restaurant();
-            Restaurant.Id = restaurantId;
+            this.restaurantData = restaurantData;
+        }
+
+        public IActionResult OnGet(int restaurantId)
+        {
+            Restaurant = restaurantData.GetById(restaurantId);
+            if(Restaurant == null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+            return Page();
         }
     }
 }
