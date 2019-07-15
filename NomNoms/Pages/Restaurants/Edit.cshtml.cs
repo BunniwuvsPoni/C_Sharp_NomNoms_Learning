@@ -31,7 +31,7 @@ namespace NomNoms.Pages.Restaurants
 
             if(restaurantId.HasValue)
             {
-                Restaurant = restaurantData.GetById(restaurantId);
+                Restaurant = restaurantData.GetById(restaurantId.Value);
             }
             else
             {
