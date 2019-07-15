@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NomNoms.Data;
@@ -25,6 +26,11 @@ namespace NomNoms
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<NomNomsDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("NomNomsDb"));
+            });
+            
             //  Singleton is only used for development or test as it is not thread safe and will postively, result in data corruption in production.
             services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
 

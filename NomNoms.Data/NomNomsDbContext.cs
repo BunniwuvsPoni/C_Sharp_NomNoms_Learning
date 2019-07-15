@@ -8,6 +8,12 @@ namespace NomNoms.Data
 {
     public class NomNomsDbContext : DbContext
     {
+        public NomNomsDbContext(DbContextOptions<NomNomsDbContext> options)
+            : base(options)
+        {
+
+        }
+
         public DbSet<Restaurant> Restaurants { get; set; }
 
     }
