@@ -32,7 +32,8 @@ namespace NomNoms
             });
             
             //  Singleton is only used for development or test as it is not thread safe and will postively, result in data corruption in production.
-            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
+            //  Use Scoped for production, it scopes changes to each individual http request and allows the software to collect all the changes.
+            services.AddScoped<IRestaurantData, SqlRestaurantData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
