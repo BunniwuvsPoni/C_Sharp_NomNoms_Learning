@@ -53,7 +53,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            @*  @RenderSection is where the body (cshtml) is rendered   *@
+            @*  @RenderSection is where the cshtml is rendered   *@
+            <vc:restaurant-count></vc:restaurant-count>
             @RenderSection("footer", required: false)
             &copy; 2019 - NomNoms - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
