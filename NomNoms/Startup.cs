@@ -60,12 +60,23 @@ namespace NomNoms
                 app.UseHsts();
             }
 
+            app.Use(SayHelloMiddleware);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseNodeModules(env);
             app.UseCookiePolicy();
 
             app.UseMvc();
+        }
+
+        private RequestDelegate SayHelloMiddleware(
+                                    RequestDelegate arg)
+        {
+            return async ctx =>
+            {
+                await ctx.Response.WriteAsync("Hello, World!");
+            }
         }
     }
 }
