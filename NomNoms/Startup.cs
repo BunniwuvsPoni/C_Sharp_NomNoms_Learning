@@ -60,6 +60,7 @@ namespace NomNoms
                 app.UseHsts();
             }
 
+            //  If nothing else above this is activated and returns a response
             app.Use(SayHelloMiddleware);
 
             app.UseHttpsRedirection();
@@ -75,7 +76,14 @@ namespace NomNoms
         {
             return async ctx =>
             {
-                await ctx.Response.WriteAsync("Hello, World!");
+                if( ctx.Request.Path.StartsWithSegments("/hello"))
+                { 
+                    await ctx.Response.WriteAsync("Hello, World!");
+                }
+                else
+                {
+
+                }
             };
         }
     }
