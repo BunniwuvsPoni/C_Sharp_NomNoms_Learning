@@ -76,7 +76,7 @@ namespace NomNoms
             return async ctx =>
             {
                 await ctx.Response.WriteAsync("Hello, World!");
-            }
+            };
         }
     }
 }
