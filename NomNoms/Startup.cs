@@ -60,15 +60,15 @@ namespace NomNoms
                 app.UseHsts();
             }
 
-            //  If nothing else above this is activated and returns a response
-            app.Use(SayHelloMiddleware);
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseNodeModules(env);
             app.UseCookiePolicy();
 
             app.UseMvc();
+
+            //  If nothing else above this is activated and returns a response
+            app.Use(SayHelloMiddleware);
         }
 
         private RequestDelegate SayHelloMiddleware(
@@ -82,7 +82,7 @@ namespace NomNoms
                 }
                 else
                 {
-
+                    await ctx.Response.WriteAsync("Not here at Hello, World!");
                 }
             };
         }
